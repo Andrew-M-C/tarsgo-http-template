@@ -4,9 +4,14 @@
 *.dll
 *.so
 *.dylib
+*.tar
+HttpSvr
 
 # Test binary, build with `go test -c`
 *.test
 
 # Output of the go coverage tool, specifically when used with LiteIDE
 *.out
+
+# proxy files
+vendor/proxy

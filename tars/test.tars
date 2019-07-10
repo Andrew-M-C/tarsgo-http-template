@@ -1,0 +1,21 @@
+module test
+{
+    struct Result {
+        0 require int       code;
+        1 require string    message;
+    };
+
+    struct Base64Req {
+        0 optional string   input;
+    };
+
+    struct Base64Resp {
+        0 require  Result   error;
+        1 optional string   output;
+    };
+
+    interface Base64 {
+        void Encode(Base64Req req, out Base64Resp resp);
+        void Decode(Base64Req req, out Base64Resp resp);
+    };
+};
