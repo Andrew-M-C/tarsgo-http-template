@@ -29,7 +29,7 @@ func AddServant() {
 	l.Debug("endpoint: %s", endpoint)
 	if exist {
 		mux := &tars.TarsHttpMux{}
-		mux.HandleFunc("/", httpRootHandler)
+		mux.HandleFunc("/", httpApiHandler)
 		tars.AddHttpServant(mux, servant)
 		l.Info("add %s OK", servant)
 	}
