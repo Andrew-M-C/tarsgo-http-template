@@ -29,14 +29,14 @@ func AddServant() {
 	l.Debug("endpoint: %s", endpoint)
 	if exist {
 		mux := &tars.TarsHttpMux{}
-		mux.HandleFunc("/", httpBinHandler)
+		mux.HandleFunc("/", httpRootHandler)
 		tars.AddHttpServant(mux, servant)
 		l.Info("add %s OK", servant)
 	}
 }
 
-func httpBinHandler(w http.ResponseWriter, r *http.Request) {
-	l := sesslog.New(OBJ_NAME + "_bin")
+func httpApiHandler(w http.ResponseWriter, r *http.Request) {
+	l := sesslog.New(OBJ_NAME + "_api")
 	defer l.Close()
 	l.Debug("Got request")
 	w.Write([]byte("Hello Tars!"))
